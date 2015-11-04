@@ -21,3 +21,7 @@ chai.use(chaiHtml)
 // Write assertions!
 expect('<div><img /></div>').html.to.equal('<div><img></div>')
 ```
+
+## How does it work?
+
+The plugin uses [htmlparser2](https://www.npmjs.com/package/htmlparser2) to parse the given HTML strings and compares the generated trees using the `deep.equal` assertion.
