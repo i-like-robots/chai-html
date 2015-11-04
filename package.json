@@ -1,0 +1,33 @@
+{
+  "name": "chai-html",
+  "version": "0.0.1",
+  "description": "HTML assertions for Chai.",
+  "keywords": [
+    "chai",
+    "html",
+    "test",
+    "assert",
+    "assertion"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "main": "lib/chai-html.js",
+  "scripts": {
+    "test": "mocha 'tests/**/*.js'"
+  },
+  "author": "Matt Hinchliffe",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:i-like-robots/chai-html.git"
+  },
+  "homepage": "https://github.com/i-like-robots/chai-html",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "^3.8.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "chai": "^3.4.0"
+  }
+}
