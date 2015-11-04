@@ -1,4 +1,4 @@
-# Chai HTML
+# Chai HTML ![Build status](https://api.travis-ci.org/i-like-robots/chai-html.png)
 
 HTML assertions plugin for [Chai](http://chaijs.com/).
 
