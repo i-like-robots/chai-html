@@ -24,4 +24,8 @@ expect('<div><img /></div>').html.to.equal('<div><img></div>')
 
 ## How does it work?
 
-The plugin uses [htmlparser2](https://www.npmjs.com/package/htmlparser2) to parse the given HTML strings and compares the generated trees using the `deep.equal` assertion.
+Underneath this plugin uses [htmlparser2](https://www.npmjs.com/package/htmlparser2) to parse the given HTML strings and compares the generated trees using the `deep.equal` assertion. This means that although the two strings may not be the same they should generate equivalent structures.
+
+## Credits
+
+This plugin is heavily inspired by the similar [chai-xml](https://www.npmjs.com/package/chai-xml) plugin.
