@@ -29,8 +29,8 @@ describe('Chai HTML', () => {
       expect('<div><h1></h1></div>').html.to.not.equal('<div><h2></h2></div>')
     })
 
-    it('does not fret about whitespace and newlines', () => {
-      expect('<div>  <img>\n  </div>').html.to.equal('<div><img></div>')
+    it('does not fret about different whitespace and newlines', () => {
+      expect('<div>  <img>\n  </div>').html.to.equal('<div> <img> </div>')
     })
 
   })
