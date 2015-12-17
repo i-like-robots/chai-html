@@ -24,13 +24,22 @@ describe('Chai HTML', () => {
   describe('equals', () => {
 
     it('can compare HTML markup', () => {
-      expect('<div><h1></h1></div>').html.to.equal('<div><h1></h1></div>')
-      expect('<div><br></div>').html.to.equal('<div><br /></div>')
-      expect('<div><h1></h1></div>').html.to.not.equal('<div><h2></h2></div>')
+      expect('<div><h1>Hello World</h1></div>')
+        .html.to.equal('<div><h1>Hello World</h1></div>')
+
+      expect('<div><br></div>')
+        .html.to.equal('<div><br /></div>')
+
+      expect('<img src="foo" alt="bar" class="baz" />')
+        .html.to.not.equal('<img class="baz" alt="bar" src="foo" />')
+
+      expect('<div><h1></h1></div>')
+        .html.to.not.equal('<div><h2></h2></div>')
     })
 
     it('does not fret about different whitespace and newlines', () => {
-      expect('<div>  <img>\n  </div>').html.to.equal('<div> <img> </div>')
+      expect('<div>  <img>\n\n  \t</div>')
+        .html.to.equal('<div> <img> </div>')
     })
 
   })
