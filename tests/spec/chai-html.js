@@ -1,5 +1,6 @@
 'use strict'
 
+const fs        = require('fs')
 const chai      = require('chai')
 const expect    = require('chai').expect
 const chaiHtml  = require('../../lib/chai-html')
@@ -27,19 +28,34 @@ describe('Chai HTML', () => {
       expect('<div><h1>Hello World</h1></div>')
         .html.to.equal('<div><h1>Hello World</h1></div>')
 
-      expect('<div><br></div>')
-        .html.to.equal('<div><br /></div>')
-
-      expect('<img src="foo" alt="bar" class="baz" />')
-        .html.to.not.equal('<img class="baz" alt="bar" src="foo" />')
-
-      expect('<div><h1></h1></div>')
-        .html.to.not.equal('<div><h2></h2></div>')
+      expect('<div><h1>Hello World</h1></div>')
+        .html.to.not.equal('<div><h2>Hello World</h2></div>')
     })
 
     it('does not fret about different whitespace and newlines', () => {
       expect('<div>  <img>\n\n  \t</div>')
         .html.to.equal('<div> <img> </div>')
+    })
+
+    it('does not baulk at comparing self-closing and unclosed elements', () => {
+      expect('<div><br><hr /></div>')
+        .html.to.equal('<div><br /><hr></div>')
+    })
+
+    it('sorts attributes and class names', () => {
+      expect('<img src="foo" alt="bar" class="baz qux" />')
+        .html.to.equal('<img class="qux baz" alt="bar" src="foo" />')
+
+      expect('<img src="foo" alt="bar" class="baz qux" />')
+        .html.to.not.equal('<img class="quux qux baz" alt="bar" src="foo" />')
+    })
+
+    it('can handle large HTML chunks', () => {
+      const a = fs.readFileSync(__dirname + '/../fixtures/article-a.html').toString()
+      const b = fs.readFileSync(__dirname + '/../fixtures/article-b.html').toString()
+
+      expect(a).html.to.equal(a);
+      expect(a).html.to.not.equal(b);
     })
 
   })

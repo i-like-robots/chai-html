@@ -25,7 +25,7 @@ expect('<h1>Hello World!</h1>').html.to.not.equal('<h1>Hallo Welt!</h1>')
 
 ## How does it work?
 
-Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to parse the given HTML strings and compares the generated trees. This means that although the two strings may not be the same they should generate equivalent structures.
+Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to parse the given HTML strings and the generated trees normalized before being compared. This means that although the two strings may not be the same they should generate equivalent structures.
 
 ## Credits
 
