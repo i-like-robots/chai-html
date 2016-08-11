@@ -1,6 +1,6 @@
 {
   "name": "chai-html",
-  "version": "0.0.3",
+  "version": "0.0.4-2",
   "description": "HTML assertions for Chai.",
   "keywords": [
     "chai",
@@ -24,7 +24,8 @@
   "homepage": "https://github.com/i-like-robots/chai-html",
   "license": "MIT",
   "dependencies": {
-    "htmlparser2": "^3.8.3"
+    "deep-diff": "^0.3.3",
+    "parse5": "^2.0.2"
   },
   "devDependencies": {
     "mocha": "^2.3.3",
