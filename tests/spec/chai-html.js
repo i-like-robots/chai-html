@@ -1,16 +1,17 @@
+/* eslint-env mocha */
+
 'use strict'
 
-const fs        = require('fs')
-const chai      = require('chai')
-const expect    = require('chai').expect
-const chaiHtml  = require('../../lib/chai-html')
+const fs = require('fs')
+const path = require('path')
+const chai = require('chai')
+const expect = require('chai').expect
+const chaiHtml = require('../../lib/chai-html')
 
 chai.use(chaiHtml)
 
 describe('Chai HTML', () => {
-
   describe('the plugin', () => {
-
     it('should be a chai property', () => {
       expect(chai.Assertion.prototype.__lookupGetter__('html')).to.be.a('function')
     })
@@ -19,11 +20,9 @@ describe('Chai HTML', () => {
       expect('foo').html.to.be.a('string')
       expect(() => expect(1).html).to.throw()
     })
-
   })
 
   describe('equals', () => {
-
     it('can compare HTML markup', () => {
       expect('<div><h1>Hello World</h1></div>')
         .html.to.equal('<div><h1>Hello World</h1></div>')
@@ -51,13 +50,11 @@ describe('Chai HTML', () => {
     })
 
     it('can handle large HTML chunks', () => {
-      const a = fs.readFileSync(__dirname + '/../fixtures/article-a.html').toString()
-      const b = fs.readFileSync(__dirname + '/../fixtures/article-b.html').toString()
+      const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
+      const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
 
-      expect(a).html.to.equal(a);
-      expect(a).html.to.not.equal(b);
+      expect(a).html.to.equal(a)
+      expect(a).html.to.not.equal(b)
     })
-
   })
-
 })
