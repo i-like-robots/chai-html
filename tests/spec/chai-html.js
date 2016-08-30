@@ -42,6 +42,11 @@ describe('Chai HTML', () => {
         .html.to.equal('<div> <img> </div>')
     })
 
+    it('does not fret about trailing whitespace', () => {
+      expect('<div> <img> </div> \t   ')
+        .html.to.equal('<div> <img> </div>')
+    })
+
     it('does not baulk at comparing self-closing and unclosed elements', () => {
       expect('<div><br><hr /></div>')
         .html.to.equal('<div><br /><hr></div>')
