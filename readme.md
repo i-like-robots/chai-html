@@ -1,4 +1,6 @@
-# Chai HTML ![Build status](https://api.travis-ci.org/i-like-robots/chai-html.png)
+# Chai HTML
+
+![Build status](https://api.travis-ci.org/i-like-robots/chai-html.png) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html)
 
 HTML assertions plugin for [Chai](http://chaijs.com/).
 
@@ -25,7 +27,7 @@ expect('<h1>Hello World!</h1>').html.to.not.equal('<h1>Hallo Welt!</h1>')
 
 ## How does it work?
 
-Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to parse the given HTML strings and the generated trees normalized before being compared. This means that although the two strings may not be the same they should generate equivalent structures.
+Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to parse the given HTML strings and normalize the generated trees before being compared. This means that although the two strings of markup may not be the same they should generate equivalent structures.
 
 ## Credits
 
