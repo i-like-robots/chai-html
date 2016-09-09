@@ -10,6 +10,10 @@ const chaiHtml = require('../../lib/chai-html')
 
 chai.use(chaiHtml)
 
+const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
+const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
+const c = fs.readFileSync(path.join(__dirname, '/../fixtures/article-c.html')).toString()
+
 describe('Chai HTML', () => {
   describe('the plugin', () => {
     it('should be a chai property', () => {
@@ -46,7 +50,7 @@ describe('Chai HTML', () => {
         .html.to.equal('<div> <img> </div>')
     })
 
-    it('does not baulk at comparing self-closing and unclosed elements', () => {
+    it('does not baulk at comparing self-closing and unclosed void elements', () => {
       expect('<div><br><hr /></div>')
         .html.to.equal('<div><br /><hr></div>')
     })
@@ -60,12 +64,27 @@ describe('Chai HTML', () => {
     })
 
     it('can handle large HTML chunks', () => {
-      const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
-      const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
-      const c = fs.readFileSync(path.join(__dirname, '/../fixtures/article-c.html')).toString()
-
       expect(a).html.to.equal(b)
       expect(a).html.to.not.equal(c)
+    })
+  })
+
+  describe('error messaging', () => {
+    it('extracts the non-matching elements', () => {
+      try {
+        expect(a).html.to.equal(b)
+      } catch (e) {
+        expect(e.actual).to.match(/^…/)
+        expect(e.actual).to.match(/…$/)
+      }
+    })
+
+    it('trims very long strings in the center', () => {
+      try {
+        expect(a).html.to.equal(b)
+      } catch (e) {
+        expect(e.actual).to.match(/\s…\s…\s/)
+      }
     })
   })
 })
