@@ -62,9 +62,10 @@ describe('Chai HTML', () => {
     it('can handle large HTML chunks', () => {
       const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
       const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
+      const c = fs.readFileSync(path.join(__dirname, '/../fixtures/article-c.html')).toString()
 
-      expect(a).html.to.equal(a)
-      expect(a).html.to.not.equal(b)
+      expect(a).html.to.equal(b)
+      expect(a).html.to.not.equal(c)
     })
   })
 })
