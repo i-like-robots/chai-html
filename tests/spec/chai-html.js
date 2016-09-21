@@ -69,6 +69,20 @@ describe('Chai HTML', () => {
     })
   })
 
+  describe('not equals', () => {
+    it('supports the negation flag', () => {
+      expect(() => {
+        expect('<div><h1>Hello World</h1></div>')
+          .html.not.to.equal('<div><h1>Hello World</h1></div>')
+      }).to.throw()
+
+      expect(() => {
+        expect('<div><h1>Hello World</h1></div>')
+          .html.not.to.equal('<div><h2>Hello World</h2></div>')
+      }).not.to.throw()
+    })
+  })
+
   describe('error messaging', () => {
     context('edits', () => {
       it('detects tag changes', () => {
