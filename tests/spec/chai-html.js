@@ -69,22 +69,105 @@ describe('Chai HTML', () => {
     })
   })
 
+  describe('not equals', () => {
+    it('supports the negation flag', () => {
+      expect(() => {
+        expect('<div><h1>Hello World</h1></div>')
+          .html.not.to.equal('<div><h1>Hello World</h1></div>')
+      }).to.throw()
+
+      expect(() => {
+        expect('<div><h1>Hello World</h1></div>')
+          .html.not.to.equal('<div><h2>Hello World</h2></div>')
+      }).not.to.throw()
+    })
+  })
+
   describe('error messaging', () => {
-    it('extracts the non-matching elements', () => {
-      try {
-        expect(a).html.to.equal(b)
-      } catch (e) {
-        expect(e.actual).to.match(/^…/)
-        expect(e.actual).to.match(/…$/)
-      }
+    context('edits', () => {
+      it('detects tag changes', () => {
+        try {
+          expect('<img />').html.to.equal('<br />')
+        } catch (e) {
+          expect(e.message).to.equal('tag <img> was changed to tag <br>')
+        }
+      })
+
+      it('detects attribute changes', () => {
+        try {
+          expect('<img foo />').html.to.equal('<img bar />')
+        } catch (e) {
+          expect(e.message).to.equal('attribute [foo] was changed to attribute [bar]')
+        }
+      })
+
+      it('detects attribute value changes', () => {
+        try {
+          expect('<img foo="bar" />').html.to.equal('<img foo="baz" />')
+        } catch (e) {
+          expect(e.message).to.equal('attribute [foo="bar"] was changed to attribute [foo="baz"]')
+        }
+      })
+
+      it('detects text changes', () => {
+        try {
+          expect('<p>Hello world!</p>').html.to.equal('<p>Hej world!</p>')
+        } catch (e) {
+          expect(e.message).to.equal('text "Hello world!" was changed to text "Hej world!"')
+        }
+      })
     })
 
-    it('trims very long strings in the center', () => {
-      try {
-        expect(a).html.to.equal(b)
-      } catch (e) {
-        expect(e.actual).to.match(/\s…\s…\s/)
-      }
+    context('additions', () => {
+      it('detects tags added', () => {
+        try {
+          expect('<img />').html.to.equal('<img /><br />')
+        } catch (e) {
+          expect(e.message).to.equal('tag <br> has been added')
+        }
+      })
+
+      it('detects attributes added', () => {
+        try {
+          expect('<img />').html.to.equal('<img foo />')
+        } catch (e) {
+          expect(e.message).to.equal('attribute [foo] has been added')
+        }
+      })
+
+      it('detects text added', () => {
+        try {
+          expect('<p>Hello world!</p>').html.to.equal('<p>Hello world!</p> Hej!')
+        } catch (e) {
+          expect(e.message).to.equal('text " Hej!" has been added')
+        }
+      })
+    })
+
+    context('deletions', () => {
+      it('detects tags removed', () => {
+        try {
+          expect('<img /><br />').html.to.equal('<img />')
+        } catch (e) {
+          expect(e.message).to.equal('tag <br> has been removed')
+        }
+      })
+
+      it('detects attributes removed', () => {
+        try {
+          expect('<img foo />').html.to.equal('<img />')
+        } catch (e) {
+          expect(e.message).to.equal('attribute [foo] has been removed')
+        }
+      })
+
+      it('detects text removed', () => {
+        try {
+          expect('<p>Hello world!</p> Hej!').html.to.equal('<p>Hello world!</p>')
+        } catch (e) {
+          expect(e.message).to.equal('text " Hej!" has been removed')
+        }
+      })
     })
   })
 })
