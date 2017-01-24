@@ -50,6 +50,14 @@ describe('Chai HTML', () => {
         .html.to.equal('<div> <img> </div>')
     })
 
+    it('does not fret when text is written in an expanded format', () => {
+      expect('<p>\n\tHello World\n</p>')
+        .html.to.equal('<p>Hello World</p>')
+
+      expect('<p>\n\tHello <b> World </b>\n</p>')
+        .html.to.equal('<p>Hello <b>World</b></p>')
+    })
+
     it('does not baulk at comparing self-closing and unclosed void elements', () => {
       expect('<div><br><hr /></div>')
         .html.to.equal('<div><br /><hr></div>')
