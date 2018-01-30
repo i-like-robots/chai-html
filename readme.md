@@ -1,6 +1,6 @@
 # Chai HTML
 
-![Build status](https://api.travis-ci.org/i-like-robots/chai-html.png) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html)
+[![Build Status](https://travis-ci.org/i-like-robots/chai-html.svg?branch=master)](https://travis-ci.org/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://badge.fury.io/js/chai-html.svg)](https://badge.fury.io/js/chai-html)
 
 HTML assertions plugin for [Chai](http://chaijs.com/).
 
