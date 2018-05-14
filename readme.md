@@ -1,6 +1,6 @@
 # Chai HTML
 
-[![Build Status](https://travis-ci.org/i-like-robots/chai-html.svg?branch=master)](https://travis-ci.org/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://badge.fury.io/js/chai-html.svg)](https://badge.fury.io/js/chai-html)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/chai-html.svg?branch=master)](https://travis-ci.org/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html)
 
 HTML assertions plugin for [Chai](http://chaijs.com/).
 
@@ -57,3 +57,7 @@ Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to pars
 ## Credits
 
 This plugin is heavily inspired by the similar [chai-xml](https://www.npmjs.com/package/chai-xml) plugin.
+
+## License
+
+chai-html is MIT licensed.
