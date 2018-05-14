@@ -27,7 +27,7 @@
   "homepage": "https://github.com/i-like-robots/chai-html",
   "license": "MIT",
   "dependencies": {
-    "deep-diff": "^0.3.4",
+    "deep-diff": "^1.0.0",
     "parse5": "^4.0.0"
   },
   "devDependencies": {
@@ -35,6 +35,6 @@
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.0.0",
-    "standard": "^10.0.3"
+    "standard": "^11.0.0"
   }
 }
