@@ -6,19 +6,31 @@ HTML assertions plugin for [Chai](http://chaijs.com/).
 
 ## Installation
 
-```bash
-npm install --save-dev chai-html
+This is a [Node.js] module available through the [npm] registry.
+
+Node 6 or higher is required.
+
+[Node.js]: https://nodejs.org/
+[npm]: http://npmjs.com/
+
+You can install using the package manager of your choice:
+
+```sh
+# installation with NPM
+$ npm install -D chai-html
+
+# or install using Yarn
+$ yarn add -D chai-html
 ```
 
 ## Usage
 
 ```js
-const chai      = require('chai')
-const expect    = require('chai').expect
+const { use, expect } = require('chai')
 const chaiHtml  = require('chai-html')
 
 // Register the plugin
-chai.use(chaiHtml)
+use(chaiHtml)
 
 // Write assertions!
 expect('<div><img /></div>').html.to.equal('<div><img></div>')
