@@ -4,3 +4,5 @@ coverage/
 .DS_Store
 Thumbs.db
 npm-debug.log
+package-lock.json
+npm-debug.log
