@@ -6,22 +6,17 @@ HTML assertions plugin for [Chai](http://chaijs.com/).
 
 ## Installation
 
-This is a [Node.js] module available through the [npm] registry.
+This is a [Node.js] module available through the [npm] registry. Before installing, download and install Node.js. Node.js 6 or higher is required.
 
-Node 6 or higher is required.
-
-[Node.js]: https://nodejs.org/
-[npm]: http://npmjs.com/
-
-You can install using the package manager of your choice:
+Installation is done using the [npm install] command:
 
 ```sh
-# installation with NPM
-$ npm install -D chai-html
-
-# or install using Yarn
-$ yarn add -D chai-html
+$ npm install -S chai-html
 ```
+
+[Node.js]: https://nodejs.org/en/
+[npm]: https://www.npmjs.com/
+[npm install]: https://docs.npmjs.com/getting-started/installing-npm-packages-locally
 
 ## Usage
 
