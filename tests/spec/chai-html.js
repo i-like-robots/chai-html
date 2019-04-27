@@ -97,7 +97,7 @@ describe('Chai HTML', () => {
         try {
           expect('<img />').html.to.equal('<br />')
         } catch (e) {
-          expect(e.message).to.equal('tag <img> was changed to tag <br>')
+          expect(e.message).to.equal('tag <br> was changed to tag <img>')
         }
       })
 
@@ -105,7 +105,7 @@ describe('Chai HTML', () => {
         try {
           expect('<img foo />').html.to.equal('<img bar />')
         } catch (e) {
-          expect(e.message).to.equal('attribute [foo] was changed to attribute [bar]')
+          expect(e.message).to.equal('attribute [bar] was changed to attribute [foo]')
         }
       })
 
@@ -113,7 +113,7 @@ describe('Chai HTML', () => {
         try {
           expect('<img foo="bar" />').html.to.equal('<img foo="baz" />')
         } catch (e) {
-          expect(e.message).to.equal('attribute [foo="bar"] was changed to attribute [foo="baz"]')
+          expect(e.message).to.equal('attribute [foo="baz"] was changed to attribute [foo="bar"]')
         }
       })
 
@@ -121,7 +121,7 @@ describe('Chai HTML', () => {
         try {
           expect('<p>Hello world!</p>').html.to.equal('<p>Hej world!</p>')
         } catch (e) {
-          expect(e.message).to.equal('text "Hello world!" was changed to text "Hej world!"')
+          expect(e.message).to.equal('text "Hej world!" was changed to text "Hello world!"')
         }
       })
     })
@@ -129,7 +129,7 @@ describe('Chai HTML', () => {
     context('additions', () => {
       it('detects tags added', () => {
         try {
-          expect('<img />').html.to.equal('<img /><br />')
+          expect('<img /><br />').html.to.equal('<img />')
         } catch (e) {
           expect(e.message).to.equal('tag <br> has been added')
         }
@@ -137,7 +137,7 @@ describe('Chai HTML', () => {
 
       it('detects attributes added', () => {
         try {
-          expect('<img />').html.to.equal('<img foo />')
+          expect('<img foo />').html.to.equal('<img />')
         } catch (e) {
           expect(e.message).to.equal('attribute [foo] has been added')
         }
@@ -145,7 +145,7 @@ describe('Chai HTML', () => {
 
       it('detects text added', () => {
         try {
-          expect('<p>Hello world!</p>').html.to.equal('<p>Hello world!</p> Hej!')
+          expect('<p>Hello world!</p> Hej!').html.to.equal('<p>Hello world!</p>')
         } catch (e) {
           expect(e.message).to.equal('text " Hej!" has been added')
         }
@@ -155,7 +155,7 @@ describe('Chai HTML', () => {
     context('deletions', () => {
       it('detects tags removed', () => {
         try {
-          expect('<img /><br />').html.to.equal('<img />')
+          expect('<img />').html.to.equal('<img /><br />')
         } catch (e) {
           expect(e.message).to.equal('tag <br> has been removed')
         }
@@ -163,7 +163,7 @@ describe('Chai HTML', () => {
 
       it('detects attributes removed', () => {
         try {
-          expect('<img foo />').html.to.equal('<img />')
+          expect('<img />').html.to.equal('<img foo />')
         } catch (e) {
           expect(e.message).to.equal('attribute [foo] has been removed')
         }
@@ -171,7 +171,7 @@ describe('Chai HTML', () => {
 
       it('detects text removed', () => {
         try {
-          expect('<p>Hello world!</p> Hej!').html.to.equal('<p>Hello world!</p>')
+          expect('<p>Hello world!</p>').html.to.equal('<p>Hello world!</p> Hej!')
         } catch (e) {
           expect(e.message).to.equal('text " Hej!" has been removed')
         }
