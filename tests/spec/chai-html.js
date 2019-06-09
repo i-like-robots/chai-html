@@ -13,6 +13,7 @@ chai.use(chaiHtml)
 const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
 const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
 const c = fs.readFileSync(path.join(__dirname, '/../fixtures/article-c.html')).toString()
+const d = fs.readFileSync(path.join(__dirname, '/../fixtures/article-d.html')).toString()
 
 describe('Chai HTML', () => {
   describe('the plugin', () => {
@@ -74,6 +75,26 @@ describe('Chai HTML', () => {
     it('can handle large HTML chunks', () => {
       expect(a).html.to.equal(b)
       expect(a).html.to.not.equal(c)
+    })
+
+    describe('ignoringcomments', () => {
+      it('does not ignore comments if ignoringcomments option not set', () => {
+        expect('<div><!--Comment--></div>').html.to.not.equal('<div></div>')
+      })
+
+      it('ignores comments if ignoringcomments option set', () => {
+        expect('<div><!--Comment--></div>').html.ignoringcomments.to.equal(
+          '<div/>'
+        )
+      })
+
+      it('ignores comments in the middle of text', () => {
+        expect('<div>aaa<!--comment-->bbb</div>').html.ignoringcomments.to.equal('<div>aaabbb</div>')
+      })
+
+      it('ignores complex comments if ignorecomments option set', () => {
+        expect(c).html.ignoringcomments.to.equal(d)
+      })
     })
   })
 
