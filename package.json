@@ -20,6 +20,9 @@
     "coverage": "nyc node_modules/.bin/_mocha 'tests/spec/*.js'"
   },
   "author": "Matt Hinchliffe",
+  "contributors": [
+    "Daniel Elkington"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:i-like-robots/chai-html.git"
