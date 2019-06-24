@@ -77,23 +77,23 @@ describe('Chai HTML', () => {
       expect(a).html.to.not.equal(c)
     })
 
-    describe('ignoringcomments', () => {
-      it('does not ignore comments if ignoringcomments option not set', () => {
+    describe('ignoringComments', () => {
+      it('does not ignore comments if the ignoringComments flag is not set', () => {
         expect('<div><!--Comment--></div>').html.to.not.equal('<div></div>')
       })
 
-      it('ignores comments if ignoringcomments option set', () => {
-        expect('<div><!--Comment--></div>').html.ignoringcomments.to.equal(
+      it('ignores comments if the ignoringComments flag is set', () => {
+        expect('<div><!--Comment--></div>').html.ignoringComments.to.equal(
           '<div/>'
         )
       })
 
-      it('ignores comments in the middle of text', () => {
-        expect('<div>aaa<!--comment-->bbb</div>').html.ignoringcomments.to.equal('<div>aaabbb</div>')
+      it('ignores comments in the middle of text nodes', () => {
+        expect('<div>aaa<!--Comment-->bbb</div>').html.ignoringComments.to.equal('<div>aaabbb</div>')
       })
 
-      it('ignores complex comments if ignorecomments option set', () => {
-        expect(c).html.ignoringcomments.to.equal(d)
+      it('ignores complex comments if ignoringComments flag set', () => {
+        expect(c).html.ignoringComments.to.equal(d)
       })
     })
   })

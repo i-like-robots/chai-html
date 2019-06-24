@@ -45,11 +45,12 @@ expect('<p>Hello World!</p> Hej!').html.to.equal('<p>Hello World!</p>')
 // throws: text " Hej!" has been removed
 ```
 
-### .ignoringcomments
-Include the `ignoringcomments` property to ignore HTML comments.
+### .ignoringComments
+
+Add the `ignoringComments` flag to the chain to ignore HTML comments.
 
 ```js
-expect('<div><!--Comment--></div>').html.ignoringcomments.to.equal('<div></div>')
+expect('<div><!--Comment--></div>').html.ignoringComments.to.equal('<div></div>')
 ```
 
 ## How does it work?
