@@ -11,7 +11,7 @@ This is a [Node.js] module available through the [npm] registry. Before installi
 Installation is done using the [npm install] command:
 
 ```sh
-$ npm install -S chai-html
+npm install -D chai-html
 ```
 
 [Node.js]: https://nodejs.org/en/
