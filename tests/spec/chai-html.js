@@ -145,6 +145,14 @@ describe('Chai HTML', () => {
           expect(e.message).to.equal('text "Hej world!" was changed to text "Hello world!"')
         }
       })
+
+      it('detects comment changes', () => {
+        try {
+          expect('<p>Hello world!</p><!-- Hello -->').html.to.equal('<p>Hello world!</p><!-- Hej -->')
+        } catch (e) {
+          expect(e.message).to.equal('comment " Hej " was changed to comment " Hello "')
+        }
+      })
     })
 
     context('additions', () => {
@@ -171,6 +179,14 @@ describe('Chai HTML', () => {
           expect(e.message).to.equal('text " Hej!" has been added')
         }
       })
+
+      it('detects comment added', () => {
+        try {
+          expect('<p>Hello world!</p><!-- Hej! -->').html.to.equal('<p>Hello world!</p>')
+        } catch (e) {
+          expect(e.message).to.equal('comment " Hej! " has been added')
+        }
+      })
     })
 
     context('deletions', () => {
@@ -195,6 +211,14 @@ describe('Chai HTML', () => {
           expect('<p>Hello world!</p>').html.to.equal('<p>Hello world!</p> Hej!')
         } catch (e) {
           expect(e.message).to.equal('text " Hej!" has been removed')
+        }
+      })
+
+      it('detects comment removed', () => {
+        try {
+          expect('<p>Hello world!</p>').html.to.equal('<p>Hello world!</p> <!-- Hej! -->')
+        } catch (e) {
+          expect(e.message).to.equal('comment " Hej! " has been removed')
         }
       })
     })
