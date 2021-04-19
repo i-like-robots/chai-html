@@ -6,7 +6,7 @@ A focussed HTML assertions plugin for [Chai](http://chaijs.com/).
 
 ## Installation
 
-This is a [Node.js] module available through the [npm] registry. Before installing, download and install Node.js. Node.js 6 or higher is required.
+This is a [Node.js] module available through the [npm] registry. Before installing, download and install Node.js. Node.js 12 or higher is required.
 
 Installation is done using the [npm install] command:
 
