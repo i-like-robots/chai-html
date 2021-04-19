@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1
+
+- Adds changelog
+- Fix for incorrect Node version reported in readme
 ## v2.0.0
 
 - Updates minimum supported Node version to v12
