@@ -1,6 +1,6 @@
 # Chai HTML
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/chai-html.svg?branch=master)](https://travis-ci.org/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html) [![Greenkeeper badge](https://badges.greenkeeper.io/i-like-robots/chai-html.svg)](https://greenkeeper.io/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/chai-html.svg?branch=master)](https://travis-ci.org/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=master)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html)
 
 A focussed HTML assertions plugin for [Chai](http://chaijs.com/).
 
