@@ -17,7 +17,7 @@
     "test": "npm run lint && npm run spec",
     "spec": "mocha 'tests/spec/*.js'",
     "lint": "standard lib/*.js tests/spec/*.js",
-    "coverage": "nyc node_modules/.bin/_mocha 'tests/spec/*.js'"
+    "coverage": "nyc --reporter=lcov --reporter=text npm run spec"
   },
   "author": "Matt Hinchliffe",
   "contributors": [
