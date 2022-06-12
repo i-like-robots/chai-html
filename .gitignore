@@ -1,7 +1,4 @@
 node_modules/
-coverage/
-.nyc_output/
 .DS_Store
 Thumbs.db
 npm-debug.log
-package-lock.json
