@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+
+- Updates parse5 dependency to v7
+
 ## v2.0.1
 
 - Adds changelog
