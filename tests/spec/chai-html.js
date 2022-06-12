@@ -29,47 +29,41 @@ describe('Chai HTML', () => {
 
   describe('equals', () => {
     it('can compare HTML markup', () => {
-      expect('<div><h1>Hello World</h1></div>')
-        .html.to.equal('<div><h1>Hello World</h1></div>')
+      expect('<div><h1>Hello World</h1></div>').html.to.equal('<div><h1>Hello World</h1></div>')
 
-      expect('<div><h1>Hello World</h1></div>')
-        .html.to.not.equal('<div><h2>Hello World</h2></div>')
+      expect('<div><h1>Hello World</h1></div>').html.to.not.equal('<div><h2>Hello World</h2></div>')
     })
 
     it('does not fret about different whitespace and newlines', () => {
-      expect('<div>  <img>\n\n  \t</div>')
-        .html.to.equal('<div> <img> </div>')
+      expect('<div>  <img>\n\n  \t</div>').html.to.equal('<div> <img> </div>')
     })
 
     it('does not fret about leading whitespace', () => {
-      expect('  \t<div> <img> </div>')
-        .html.to.equal('<div> <img> </div>')
+      expect('  \t<div> <img> </div>').html.to.equal('<div> <img> </div>')
     })
 
     it('does not fret about trailing whitespace', () => {
-      expect('<div> <img> </div> \t   ')
-        .html.to.equal('<div> <img> </div>')
+      expect('<div> <img> </div> \t   ').html.to.equal('<div> <img> </div>')
     })
 
     it('does not fret when text is written in an expanded format', () => {
-      expect('<p>\n\tHello World\n</p>')
-        .html.to.equal('<p>Hello World</p>')
+      expect('<p>\n\tHello World\n</p>').html.to.equal('<p>Hello World</p>')
 
-      expect('<p>\n\tHello <b> World </b>\n</p>')
-        .html.to.equal('<p>Hello <b>World</b></p>')
+      expect('<p>\n\tHello <b> World </b>\n</p>').html.to.equal('<p>Hello <b>World</b></p>')
     })
 
     it('does not baulk at comparing self-closing and unclosed void elements', () => {
-      expect('<div><br><hr /></div>')
-        .html.to.equal('<div><br /><hr></div>')
+      expect('<div><br><hr /></div>').html.to.equal('<div><br /><hr></div>')
     })
 
     it('sorts attributes and class names', () => {
-      expect('<img src="foo" alt="bar" class="baz qux" />')
-        .html.to.equal('<img class="qux baz" alt="bar" src="foo" />')
+      expect('<img src="foo" alt="bar" class="baz qux" />').html.to.equal(
+        '<img class="qux baz" alt="bar" src="foo" />'
+      )
 
-      expect('<img src="foo" alt="bar" class="baz qux" />')
-        .html.to.not.equal('<img class="quux qux baz" alt="bar" src="foo" />')
+      expect('<img src="foo" alt="bar" class="baz qux" />').html.to.not.equal(
+        '<img class="quux qux baz" alt="bar" src="foo" />'
+      )
     })
 
     it('can handle large HTML chunks', () => {
@@ -83,13 +77,13 @@ describe('Chai HTML', () => {
       })
 
       it('ignores comments if the ignoringComments flag is set', () => {
-        expect('<div><!--Comment--></div>').html.ignoringComments.to.equal(
-          '<div/>'
-        )
+        expect('<div><!--Comment--></div>').html.ignoringComments.to.equal('<div/>')
       })
 
       it('ignores comments in the middle of text nodes', () => {
-        expect('<div>aaa<!--Comment-->bbb</div>').html.ignoringComments.to.equal('<div>aaabbb</div>')
+        expect('<div>aaa<!--Comment-->bbb</div>').html.ignoringComments.to.equal(
+          '<div>aaabbb</div>'
+        )
       })
 
       it('ignores complex comments if ignoringComments flag set', () => {
@@ -101,13 +95,15 @@ describe('Chai HTML', () => {
   describe('not equals', () => {
     it('supports the negation flag', () => {
       expect(() => {
-        expect('<div><h1>Hello World</h1></div>')
-          .html.not.to.equal('<div><h1>Hello World</h1></div>')
+        expect('<div><h1>Hello World</h1></div>').html.not.to.equal(
+          '<div><h1>Hello World</h1></div>'
+        )
       }).to.throw()
 
       expect(() => {
-        expect('<div><h1>Hello World</h1></div>')
-          .html.not.to.equal('<div><h2>Hello World</h2></div>')
+        expect('<div><h1>Hello World</h1></div>').html.not.to.equal(
+          '<div><h2>Hello World</h2></div>'
+        )
       }).not.to.throw()
     })
   })
@@ -148,7 +144,9 @@ describe('Chai HTML', () => {
 
       it('detects comment changes', () => {
         try {
-          expect('<p>Hello world!</p><!-- Hello -->').html.to.equal('<p>Hello world!</p><!-- Hej -->')
+          expect('<p>Hello world!</p><!-- Hello -->').html.to.equal(
+            '<p>Hello world!</p><!-- Hej -->'
+          )
         } catch (e) {
           expect(e.message).to.equal('comment " Hej " was changed to comment " Hello "')
         }
