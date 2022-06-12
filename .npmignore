@@ -1,5 +1,7 @@
-tests
-coverage
-.nyc_output
-.travis.yml
+.github/
+tests/
 .editorconfig
+.eslintignore
+.eslintrc.js
+.prettierignore
+.prettierrc.json
