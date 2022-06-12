@@ -20,7 +20,7 @@
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,yml}'",
     "verify": "npm run lint && npm run format",
     "coverage": "nyc --reporter=lcov --reporter=text npm run spec",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run test"
   },
   "author": "Matt Hinchliffe",
   "contributors": [

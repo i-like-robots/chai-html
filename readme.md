@@ -1,6 +1,6 @@
 # Chai HTML
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/main/LICENSE) [![Build Status](https://api.travis-ci.com/i-like-robots/chai-html.svg?branch=main)](https://travis-ci.com/github/i-like-robots/chai-html) [![Coverage Status](https://coveralls.io/repos/github/i-like-robots/chai-html/badge.svg?branch=main)](https://coveralls.io/github/i-like-robots/chai-html) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/main/LICENSE) ![build status](https://github.com/i-like-robots/chai-html/actions/workflows/test.yml/badge.svg?branch=main) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html)
 
 A focussed HTML assertions plugin for [Chai](http://chaijs.com/).
 
