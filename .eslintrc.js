@@ -4,11 +4,5 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: [],
-  overrides: [
-    {
-      files: ['lib/*.js', 'tests/**/*.js'],
-      extends: ['eslint:recommended'],
-    },
-  ],
+  extends: ['eslint:recommended'],
 }
