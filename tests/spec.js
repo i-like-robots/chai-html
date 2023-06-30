@@ -1,16 +1,10 @@
 const { describe, it } = require('node:test')
-const fs = require('fs')
-const path = require('path')
 const chai = require('chai')
 const expect = require('chai').expect
 const chaiHtml = require('../lib/chai-html')
+const { a, b, c, d } = require('./fixtures')
 
 chai.use(chaiHtml)
-
-const a = fs.readFileSync(path.join(__dirname, 'fixtures/article-a.html')).toString()
-const b = fs.readFileSync(path.join(__dirname, 'fixtures/article-b.html')).toString()
-const c = fs.readFileSync(path.join(__dirname, 'fixtures/article-c.html')).toString()
-const d = fs.readFileSync(path.join(__dirname, 'fixtures/article-d.html')).toString()
 
 describe('Chai HTML', () => {
   describe('the plugin', () => {
