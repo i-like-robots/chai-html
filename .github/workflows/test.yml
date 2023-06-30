@@ -33,4 +33,4 @@ jobs:
         run: npm run verify
 
       - name: Test
-        run: npm run spec
+        run: npm test

@@ -1,19 +1,16 @@
-/* eslint-env mocha */
-
-'use strict'
-
+const { describe, it } = require('node:test')
 const fs = require('fs')
 const path = require('path')
 const chai = require('chai')
 const expect = require('chai').expect
-const chaiHtml = require('../../lib/chai-html')
+const chaiHtml = require('../lib/chai-html')
 
 chai.use(chaiHtml)
 
-const a = fs.readFileSync(path.join(__dirname, '/../fixtures/article-a.html')).toString()
-const b = fs.readFileSync(path.join(__dirname, '/../fixtures/article-b.html')).toString()
-const c = fs.readFileSync(path.join(__dirname, '/../fixtures/article-c.html')).toString()
-const d = fs.readFileSync(path.join(__dirname, '/../fixtures/article-d.html')).toString()
+const a = fs.readFileSync(path.join(__dirname, 'fixtures/article-a.html')).toString()
+const b = fs.readFileSync(path.join(__dirname, 'fixtures/article-b.html')).toString()
+const c = fs.readFileSync(path.join(__dirname, 'fixtures/article-c.html')).toString()
+const d = fs.readFileSync(path.join(__dirname, 'fixtures/article-d.html')).toString()
 
 describe('Chai HTML', () => {
   describe('the plugin', () => {
@@ -109,7 +106,7 @@ describe('Chai HTML', () => {
   })
 
   describe('error messaging', () => {
-    context('edits', () => {
+    describe('edits', () => {
       it('detects tag changes', () => {
         try {
           expect('<img />').html.to.equal('<br />')
@@ -153,7 +150,7 @@ describe('Chai HTML', () => {
       })
     })
 
-    context('additions', () => {
+    describe('additions', () => {
       it('detects tags added', () => {
         try {
           expect('<img /><br />').html.to.equal('<img />')
@@ -187,7 +184,7 @@ describe('Chai HTML', () => {
       })
     })
 
-    context('deletions', () => {
+    describe('deletions', () => {
       it('detects tags removed', () => {
         try {
           expect('<img />').html.to.equal('<img /><br />')

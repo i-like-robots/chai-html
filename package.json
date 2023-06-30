@@ -15,7 +15,7 @@
   "main": "lib/chai-html.js",
   "scripts": {
     "test": "npm run verify && npm run spec",
-    "spec": "mocha 'tests/spec/*.js'",
+    "spec": "node --test --test-reporter spec tests/spec.js",
     "lint": "eslint . --ext js",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,yml}'",
     "verify": "npm run lint && npm run format",
