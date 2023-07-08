@@ -39,6 +39,6 @@
   "devDependencies": {
     "chai": "^4.3.4",
     "eslint": "^8.43.0",
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   }
 }
