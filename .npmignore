@@ -1,5 +1,6 @@
 .github/
-tests/
+test/
+
 .editorconfig
 .eslintignore
 .eslintrc.js
