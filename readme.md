@@ -1,4 +1,4 @@
-# Chai HTML
+# chai-html
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/chai-html/blob/main/LICENSE) ![build status](https://github.com/i-like-robots/chai-html/actions/workflows/test.yml/badge.svg?branch=main) [![npm version](https://img.shields.io/npm/v/chai-html.svg?style=flat)](https://www.npmjs.com/package/chai-html)
 
@@ -11,7 +11,7 @@ This is a [Node.js] module available through the [npm] registry. Before installi
 Installation is done using the [npm install] command:
 
 ```sh
-npm install -D chai-html
+npm install --save-dev chai-html
 ```
 
 [Node.js]: https://nodejs.org/en/
@@ -59,7 +59,7 @@ Underneath this plugin uses [parse5](https://github.com/inikulin/parse5) to pars
 
 ## Credits
 
-This plugin is heavily inspired by the similar [chai-xml](https://www.npmjs.com/package/chai-xml) plugin.
+This plugin is inspired by the similar [chai-xml](https://www.npmjs.com/package/chai-xml) plugin.
 
 ## License
 
