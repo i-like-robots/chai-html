@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm install
+        run: npm ci
 
       - name: Lint and format
         run: npm run verify
