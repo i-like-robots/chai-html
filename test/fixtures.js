@@ -1,4 +1,4 @@
-const a = `
+export const a = `
 <article class="BlogPost BlogPost--listing" itemscope itemtype="http://schema.org/BlogPosting">
   <a class="BlogPost-permalink" href="/2015/12/14/svg-icons-are-easy-but-the-fallbacks-arent.html" rel="bookmark" itemprop="url">
 
@@ -19,7 +19,7 @@ const a = `
 </article>
 `
 
-const b = `
+export const b = `
 <article class="BlogPost BlogPost--listing" itemtype="http://schema.org/BlogPosting" itemscope>
   <a href="/2015/12/14/svg-icons-are-easy-but-the-fallbacks-arent.html" class="BlogPost-permalink" rel="bookmark" itemprop="url">
 
@@ -36,7 +36,7 @@ const b = `
 </article>
 `
 
-const c = `
+export const c = `
 <article class="BlogPost BlogPost--listing" itemscope itemtype="http://schema.org/BlogPosting">
   <a class="BlogPost-permalink" href="/2015/12/14/svg-icons-are-easy-but-the-fallbacks-arent.html" rel="bookmark" itemprop="url">
 
@@ -57,7 +57,7 @@ const c = `
 </article>
 `
 
-const d = `
+export const d = `
 <!--This is the same as article c, but with comments-->
 <article class="BlogPost BlogPost--listing" itemscope itemtype="http://schema.org/BlogPosting">
   <a class="BlogPost-permalink" href="/2015/12/14/svg-icons-are-easy-but-the-fallbacks-arent.html" rel="bookmark" itemprop="url">
@@ -89,5 +89,3 @@ with HTML!
   </a>
 </article>
 `
-
-module.exports = { a, b, c, d }

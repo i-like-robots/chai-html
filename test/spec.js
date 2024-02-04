@@ -1,15 +1,14 @@
-const { describe, it } = require('node:test')
-const chai = require('chai')
-const expect = require('chai').expect
-const chaiHtml = require('../lib/chai-html')
-const { a, b, c, d } = require('./fixtures')
+import { describe, it } from 'node:test'
+import { Assertion, expect, use } from 'chai'
+import chaiHtml from '../lib/chai-html.js'
+import { a, b, c, d } from './fixtures.js'
 
-chai.use(chaiHtml)
+use(chaiHtml)
 
 describe('Chai HTML', () => {
   describe('the plugin', () => {
     it('should be a chai property', () => {
-      expect(chai.Assertion.prototype.__lookupGetter__('html')).to.be.a('function')
+      expect(Assertion.prototype.__lookupGetter__('html')).to.be.a('function')
     })
 
     it('should apply only to strings', () => {
