@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.0
+
+- Updates Chai peer dependency to v5
+- Refactors package from CommonJS to ESM
+
 ## v2.1.0
 
 - Updates parse5 dependency to v7
@@ -8,6 +13,7 @@
 
 - Adds changelog
 - Fix for incorrect Node version reported in readme
+
 ## v2.0.0
 
 - Updates minimum supported Node version to v12
