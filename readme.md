@@ -6,23 +6,23 @@ A focussed HTML assertions plugin for [Chai](http://chaijs.com/).
 
 ## Installation
 
-This is a [Node.js] module available through the [npm] registry. Before installing, download and install Node.js. Node.js 12 or higher is required.
-
-Installation is done using the [npm install] command:
+This is a [Node.js] module available through the [npm] registry. Node.js 18 or higher is required.
 
 ```sh
-npm install --save-dev chai-html
+$ npm install --save-dev chai-html
 ```
+
+👋 _Please note_ this package is for Chai v5 and is [ESM](https://nodejs.org/api/esm.html) only. For Chai v4 and CommonJS support use [version 2][v2] of this package.
 
 [Node.js]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
-[npm install]: https://docs.npmjs.com/getting-started/installing-npm-packages-locally
+[v2]: https://github.com/i-like-robots/chai-html/tree/v2
 
 ## Usage
 
 ```js
-const { use, expect } = require('chai')
-const chaiHtml  = require('chai-html')
+import { use, expect } from 'chai'
+import chaiHtml from 'chai-html'
 
 // Register the plugin
 use(chaiHtml)
@@ -63,4 +63,4 @@ This plugin is inspired by the similar [chai-xml](https://www.npmjs.com/package/
 
 ## License
 
-chai-html is MIT licensed.
+This package is MIT licensed.
