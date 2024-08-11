@@ -14,7 +14,7 @@
   "scripts": {
     "test": "npm run verify && npm run spec",
     "spec": "node --test --test-reporter spec",
-    "lint": "eslint . --ext js",
+    "lint": "eslint",
     "format": "prettier --write '**/*.{js,jsx,json,yml}'",
     "verify": "npm run lint && npm run format",
     "prepublishOnly": "npm run test"
@@ -36,8 +36,9 @@
   },
   "devDependencies": {
     "chai": "^5.0.2",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.4"
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.0"
   },
   "peerDependencies": {
     "chai": "^5.0.0"
