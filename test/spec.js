@@ -24,33 +24,33 @@ describe('Chai HTML', () => {
       expect('<div><h1>Hello World</h1></div>').html.to.not.equal('<div><h2>Hello World</h2></div>')
     })
 
-    it('does not fret about different whitespace and newlines', () => {
+    it('normalizes whitespace and newlines', () => {
       expect('<div>  <img>\n\n  \t</div>').html.to.equal('<div> <img> </div>')
     })
 
-    it('normalizes whitespace in text', () => {
+    it('normalizes whitespace within text nodes', () => {
       expect('<p>Hello  World \n  !!!</p>').html.to.equal('<p>Hello World !!!</p>')
     })
 
-    it('does not fret about leading whitespace', () => {
+    it('removes leading whitespace from text nodes', () => {
       expect('  \t<div> <img> </div>').html.to.equal('<div> <img> </div>')
     })
 
-    it('does not fret about trailing whitespace', () => {
+    it('removes trailing whitespace from text nodes', () => {
       expect('<div> <img> </div> \t   ').html.to.equal('<div> <img> </div>')
     })
 
-    it('does not fret when text is written in an expanded format', () => {
+    it('normalizes whitespace across text nodes', () => {
       expect('<p>\n\tHello World\n</p>').html.to.equal('<p>Hello World</p>')
 
       expect('<p>\n\tHello <b> World </b>\n</p>').html.to.equal('<p>Hello <b>World</b></p>')
     })
 
-    it('does not baulk at comparing self-closing and unclosed void elements', () => {
+    it('normalizes self-closing and unclosed void elements', () => {
       expect('<div><br><hr /></div>').html.to.equal('<div><br /><hr></div>')
     })
 
-    it('sorts attributes and class names', () => {
+    it('sorts element attributes and class names', () => {
       expect('<img src="foo" alt="bar" class="baz qux" />').html.to.equal(
         '<img class="qux baz" alt="bar" src="foo" />'
       )
