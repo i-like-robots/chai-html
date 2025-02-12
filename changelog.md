@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.1.0
+
+- Fix to normalize whitespace within text nodes
+
 ## v3.0.0
 
 - Updates Chai peer dependency to v5
