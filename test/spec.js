@@ -28,6 +28,10 @@ describe('Chai HTML', () => {
       expect('<div>  <img>\n\n  \t</div>').html.to.equal('<div> <img> </div>')
     })
 
+    it('normalizes whitespace in text', () => {
+      expect('<p>Hello  World \n  !!!</p>').html.to.equal('<p>Hello World !!!</p>')
+    })
+
     it('does not fret about leading whitespace', () => {
       expect('  \t<div> <img> </div>').html.to.equal('<div> <img> </div>')
     })
