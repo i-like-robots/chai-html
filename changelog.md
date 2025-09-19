@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.2.0
+
+- Added support for Chai v6 (thanks to [danielhjacobs](https://github.com/danielhjacobs))
+
 ## v3.1.0
 
 - Fix to normalize whitespace within text nodes
