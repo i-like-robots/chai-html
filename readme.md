@@ -12,7 +12,7 @@ This is a [Node.js] module available through the [npm] registry. Node.js 18 or h
 $ npm install --save-dev chai-html
 ```
 
-👋 _Please note_ this package is for Chai v5 and is [ESM](https://nodejs.org/api/esm.html) only. For Chai v4 and CommonJS support use [version 2][v2] of this package.
+👋 _Please note_ this package is for Chai v5 or v6 and is [ESM](https://nodejs.org/api/esm.html) only. For Chai v4 and CommonJS support use [version 2][v2] of this package.
 
 [Node.js]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
