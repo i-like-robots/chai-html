@@ -36,9 +36,9 @@
     "parse5": "^7.2.0"
   },
   "devDependencies": {
-    "chai": "^6.0.1",
-    "eslint": "^9.20.0",
-    "prettier": "^3.5.0"
+    "chai": "^6.2.0",
+    "eslint": "^9.38.0",
+    "prettier": "^3.7.4"
   },
   "peerDependencies": {
     "chai": "^5.0.0 || ^6.0.0"
